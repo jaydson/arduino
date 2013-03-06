@@ -1,0 +1,29 @@
+<script src="/socket.io/socket.io.js"></script>
+<input type='button' value='Yellow' onclick="yellow();" style="width: 50%; height: 50%;" />
+<input type='button' value='Red' onclick="red();" style="width: 50%; height: 50%;" />
+<input type='button' value='Green' onclick="green();" style="width: 50%; height: 50%;" />
+<input type='button' value='Blue' onclick="blue();" style="width: 50%; height: 50%;" />
+<br/>
+<textarea id="txta">algo blabla #blue bla #red blabla</textarea>
+<input type="button" value="Send" onclick="send()" />
+
+<script>
+    var socket = io.connect('http://192.168.0.11:81');
+
+    function yellow(){
+        socket.emit('arduinoEnter', { color: 'yellow' });
+    }
+    function red(){
+        socket.emit('arduinoEnter', { color: 'red' });
+    }
+    function green(){
+        socket.emit('arduinoEnter', { color: 'green' });
+    }
+    function blue(){
+        socket.emit('arduinoEnter', { color: 'blue' });
+    }
+    
+    function send(){
+        socket.emit('arduinoEnter2', { text: document.getElementById('txta').value });
+    };
+</script>
