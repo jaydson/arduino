@@ -1,0 +1,2 @@
+With this experiment, you can see buttons to make different colors of leds blinking, but also, you can make it use the twitter streaming API to get mentions and blink the yellow led.
+When the mention contains the hashtag #blue, or #red or #green, the respective led will blink.
