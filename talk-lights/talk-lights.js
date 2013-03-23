@@ -18,10 +18,6 @@ function handler (req, res) {
 }
 
 
-
-
-
-
 var five = require("johnny-five")
     ,board = new five.Board();
 
@@ -136,7 +132,7 @@ board.on("ready", function() {
     });*/
 
 
-    twit.stream('statuses/filter', {'track':'felipenmoura'}, function(stream) {
+    twit.stream('statuses/filter', {'track':'#rsjs'}, function(stream) {
         stream.on('data', function (data) {
           console.log("RECEIVED", data.text);
           tryAndAdd(data.text);

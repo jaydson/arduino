@@ -1,14 +1,20 @@
+<style type="text/css">
+    input[type=button] {
+        width: 150px;
+        height: 150px;
+    }
+</style>
 <script src="/socket.io/socket.io.js"></script>
-<input type='button' value='Yellow' onclick="yellow();" style="width: 50%; height: 50%;" />
-<input type='button' value='Red' onclick="red();" style="width: 50%; height: 50%;" />
-<input type='button' value='Green' onclick="green();" style="width: 50%; height: 50%;" />
-<input type='button' value='Blue' onclick="blue();" style="width: 50%; height: 50%;" />
+<input type='button' value='Yellow' onclick="yellow();" style="background-color: yellow" />
+<input type='button' value='Red' onclick="red();" style="background-color:red" />
+<input type='button' value='Green' onclick="green();" style="background-color: green;" />
+<input type='button' value='Blue' onclick="blue();" style="background-color:blue" />
 <br/>
 <textarea id="txta">algo blabla #blue bla #red blabla</textarea>
-<input type="button" value="Send" onclick="send()" />
+<input type="button" value="Send" onclick="send()" style="width:80px;height:40px" />
 
 <script>
-    var socket = io.connect('http://192.168.0.11:81');
+    var socket = io.connect('http://localhost:81');
 
     function yellow(){
         socket.emit('arduinoEnter', { color: 'yellow' });
